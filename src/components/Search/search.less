@@ -1,0 +1,199 @@
+@borderLine: #DEDEDE;
+@fontColor: #999;
+.search{
+  position: relative;
+  width: 100%;
+  .searchWrap{
+    position: relative;
+    width: 1190px;
+    height: 140px;
+    margin: 0 auto;
+    background: #F0F3EF;
+    /*logo*/
+    .mLeft{
+      position: absolute;
+      left: 0;
+      top: -31px;
+      width: 190px;
+      height: 170px;
+      z-index: 2;
+      .logo{
+        width: 190px;
+        height: 170px;
+        box-shadow: 0 -12px 10px rgba(0,0,0,.2);
+        a{
+          position: absolute;
+          width: 190px;
+          height: 170px;
+          font-size: 0;
+          background-position: 0 0;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+    .mRight{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1190px;
+      height: 140px;
+      z-index: 1;
+      /*搜索框*/
+      .searchWrap{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1190px;
+        height: 60px;
+      
+      }
+      /*购物车*/
+      .shopCart{
+        position: absolute;
+        top: 0px;
+        left: 900px;
+        height: 60px;
+        width: 190px;
+        .cartBox{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 35px;
+          width: 190px;
+          color: #F10215;
+          font-size: 14px;
+          .cartBtn{
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 35px;
+            width: 190px;
+            background: white;
+            border: 1px solid @borderLine;
+            text-align: center;
+            line-height: 35px;
+            z-index: 5;
+            a{
+              color: #F10215;
+            }
+          }
+          .dropdown{
+            position: absolute;
+            right: 0px;
+            top: 34px;
+            width: 320px;
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid @borderLine;
+            display: none;
+            z-index: 4;
+            .hasProduct{
+              p{
+                color: @fontColor;
+                line-height: 30px;
+              }
+            }
+            .notProduct{
+              .img{
+                height: 40px;
+                width: 40px;
+                float: left;
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin-right: 5px;
+              }
+              p{
+                float: left;
+                color: @fontColor;
+                line-height: 40px;
+              }
+            }
+          }
+          &.hover{
+            .cartBtn{
+              border-bottom: 0px solid @borderLine;
+            }
+            .dropdown{
+              display: block;
+            }
+          }
+        }
+      }
+      /*热搜*/
+      .hot{
+        position: absolute;
+        top: 70px;
+        left: 320px;
+        width: 550px;
+        ul{
+          width: 550px;
+          height: 30px;
+          margin-bottom: 0;
+          li{
+            float: left;
+            margin-right: 10px;
+            font-size: 12px;
+            a{
+              color: @fontColor;
+              &:hover{
+                color: #F10215;
+              }
+            }
+            &:first-child{
+              width: 70px;
+              a{
+                display: inline-block;
+                width: 100%;
+                color: #F10215;
+              }
+            }
+          }
+        }
+      }
+      /*导航栏*/
+      .navItem{
+        position: absolute;
+        left: 200px;
+        bottom: 0;
+        width: 790px;
+        height: 40px;
+        .group{
+          float: left;
+          height: 100%;
+          ul{
+            height: 100%;
+            float: left;
+            margin-bottom: 0;
+            li{
+              height: 100%;
+              float: left;
+              line-height: 40px;
+              margin-left: 30px;
+              a{
+                font-size: 14px;
+                color: #333333;
+                &:hover{
+                  color: #F10215;
+                }
+              }
+            }
+          }
+          .line{
+            float: left;
+            margin: 15px -10px 0 20px;
+            height: 10px;
+            width: 1px;
+            background: #cccccc;
+            &.hide{
+              margin: 0;
+              height: 0;
+              width: 0;
+              background: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.app{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.app :global(a:focus){
+    text-decoration: none;
+    -webkit-text-decoration-skip: none;
+            text-decoration-skip: none;
+}

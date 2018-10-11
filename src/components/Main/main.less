@@ -1,0 +1,346 @@
+@borderLine: #DEDEDE;
+@Height: 30px;
+@fontColor: #999;
+.main{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 480px;
+  .mainBox{
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 1190px;
+    height: 480px;
+    margin: 0 auto;
+    background: #F0F3EF;
+    /*菜单*/
+    .mainMenu{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 190px;
+      height: 480px;
+      background: white;
+      .mainMenuLeft{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 190px;
+        height: 480px;
+        padding: 10px 0;
+        margin-bottom: 0;
+        overflow: hidden;
+        z-index: 2;
+        li{
+          width: 100%;
+          height: 27px;
+          &.hover{
+            background: #d9d9d9;
+          }
+          .mainMenuLink{
+            padding-left: 20px;
+            width: 100%;
+            line-height: 27px;
+            span{
+              a{
+                color: #626262;
+                border-bottom: none;
+                border-bottom: 0px solid transparent;
+                &:hover{
+                  color: #F10215;
+                }
+              }
+              i{
+                padding: 0 2px;
+                &.hide{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .mainMenuRight{
+        position: absolute;
+        left: 190px;
+        top: 0;
+        width: 800px;
+        height: 480px;
+        background: white;
+        border:1px solid @borderLine;
+        z-index: 800;
+      }
+    }
+    /*轮播图*/
+    .swiperSlider{
+      position: absolute;
+      left: 200px;
+      top: 0;
+      width: 590px;
+      height: 480px;
+      padding-top: 10px;
+      overflow: hidden;
+      .swiperItem{
+        width: 590px;
+        height: 470px;
+        cursor: pointer;
+      }
+      .aBtn{
+        position: absolute;
+        top: 50%;
+        margin-top: -25px;
+        width: 30px;
+        height: 50px;
+        background: rgba(0, 0, 0, .3);
+        cursor: pointer;
+        line-height: 50px;
+        text-align: center;
+        i{
+          font-size: 22px;
+          color: #d9d9d9;
+        }
+        &:hover{
+          background: rgba(0, 0, 0, .5);
+        }
+      }
+      .prevBtn{
+        left: 0;
+      }
+      .nextBtn{
+        right: 0;
+      }
+    }
+    /*广告*/
+    .banner{
+      position: absolute;
+      top: 0;
+      left: 800px;
+      width: 190px;
+      height: 480px;
+      ul{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 190px;
+        height: 480px;
+        li{
+          margin-top: 10px;
+          transition: opacity .2s ease;
+          &:hover{
+            opacity: .8;
+          }
+        }
+      }
+    }
+    /*用户*/
+    .userBox{
+      position: absolute;
+      top: 0;
+      left: 1000px;
+      width: 190px;
+      height: 480px;
+      padding-top: 10px;
+      .user{
+        position: relative;
+        width: 190px;
+        height: 150px;
+        padding-top: 62px;
+        background: white;
+        .avatar{
+          position: absolute;
+          left: 50%;
+          top: -10px;
+          width: 65px;
+          height: 65px;
+          margin-left: -34px;
+          a{
+            display: block;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            border: 5px solid #e3e1df;
+            box-shadow: 3px 6px 25px #c3c3c3;
+            overflow: hidden;
+            img{
+              width: 55px;
+              height: 55px;
+              border-radius: 50%;
+            }
+          }
+          
+        }
+        .userName{
+          padding: 0 10px;
+          height: 40px;
+          width: 190px;
+          font-size: 12px;
+          p{
+            text-align: center;
+            color: @fontColor;
+            line-height: 20px;
+            margin-bottom: 0;
+          }
+          div{
+            text-align: center;
+            color: @fontColor;
+            line-height: 20px;
+            .aLink{
+              a{
+                color: @fontColor;
+                padding: 0 2px;
+                &:hover{
+                  color: #F10215;
+                }
+              }
+            }
+          }
+        }
+        .userVip{
+          margin-top: 10px;
+          width: 190px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          a{
+            font-size: 12px;
+            display: inline-block;
+            width: 70px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            margin: 0 5px;
+            border-radius: 13px;
+            color: #e43f3b;
+            transition: background .3s ease,color .3s ease;
+            &:first-child{
+              box-shadow: 6px 8px 20px rgba(45,45,45,.1);
+            }
+            &:last-child{
+              background: #363634;
+              color: #E9D46B;
+            }
+            &:hover{
+              background: #F10215;
+              color: white;
+            }
+          }
+        }
+      }
+      .news{
+        position: relative;
+        width: 190px;
+        height: 130px;
+        background: white;
+        .tabHeader{
+          position: relative;
+          padding-top: 8px;
+          font-size: 12px;
+          line-height: 13px;
+          padding-bottom: 5px;
+          a{
+            color: #333333;
+            &.tabBtn{
+              padding: 0 10px;
+            }
+            &.separate{
+              border-left: 1px solid @borderLine;
+            }
+            &.more{
+              position: absolute;
+              right: 10px;
+              top: 8px;
+              &:hover{
+                color: #e43f3b;
+              }
+            }
+          }
+          .tabLine{
+            position: absolute;
+            left: 0;
+            top: 26px;
+            width: 24px;
+            height: 2px;
+            background: red;
+            margin: 0 10px;
+            transition: left .3s ease;
+          }
+        }
+        .wrap{
+          margin: 0 10px;
+          height: 104px;
+          width: 170px;
+          border-bottom: 1px solid @borderLine;
+          .content{
+            padding-top: 8px;
+            height: 96px;
+            width: 170px;
+            .ul{
+              width: 170px;
+              margin-bottom: 0;
+              .li{
+                height: 22px;
+                line-height: 22px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+                a{
+                  display: inline-block;
+                  line-height: 16px;
+                  font-size: 12px;
+                  color: #666666;
+                  &:hover{
+                    color:#F10215;
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+      }
+      .service{
+        position: relative;
+        width: 190px;
+        height: 190px;
+        background: white;
+        .serviceBox{
+          overflow: hidden;
+          padding: 18px 11px 11px 11px;
+
+          ul{
+            height: 161px;
+            margin-bottom: 0;
+            li{
+              width: 42px;
+              height: 55px;
+              float: left;
+              overflow: hidden;
+              a{
+                display: block;
+                padding-top: 6px;
+                height: 49px;
+                width: 42px;
+                font-size: 12px;
+                color: #bea68d;
+                text-align: center;
+                i{
+                  font-size: 18px;
+                }
+                p{
+                  margin-bottom: 0;
+                  line-height: 22px;
+                  text-align: center;
+                }
+                &:hover{
+                  color: #F10215;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+@borderLine: #DEDEDE;
+@fontColor: #999;
+
+.transitionFn(){
+    -webkit-transition: all ease .2s;
+    -o-transition: all ease .2s;
+    -moz-transition: all ease .2s;
+    transition: all ease .2s;
+}
+
+.goods{
+    position: relative;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    background: #F0F3EF;
+    .goodsBox{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 1200px;
+        margin: 0 auto;
+        background: #F0F3EF;
+        .titleWrap{
+            position: relative;
+            width: 100%;
+            height: 65px;
+            display: flex;
+            justify-content: center;
+            .title{
+                position: relative;
+                height: 45px;
+                line-height: 45px;
+                width: 230px;
+                text-align: center;
+                font-size: 28px;
+                color: #222;
+                text-align: center;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    width: 50px;
+                    height: 3px;
+                    display: block;
+                    background: rgb(100, 65, 65);
+                    top: 24px;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    width: 50px;
+                    height: 3px;
+                    display: block;
+                    background: #222;
+                    top: 24px;
+                }
+            }
+        }
+        .list{
+            position: relative;
+            width: 100%;
+            ul{
+                position: relative;
+                width: 100%;
+                li{
+                    position: relative;
+                    width: 230px;
+                    height: 305px;
+                    background: white;
+                    float: left;
+                    margin: 0 5px 10px;
+                    .liWrap{
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                       .img{
+                            position: relative;
+                            height: 240px;
+                            width: 100%;
+                            img{
+                                width: 170px;
+                                height: 170px;
+                                margin: 35px 30px;
+                            }
+                        }
+                        .info{
+                            position: relative;
+                            width: 100%;
+                            clear: both;
+                            padding: 0 16px;
+                            height: 65px;
+                            line-height: 24px;
+                            z-index: 8;
+                            .transitionFn();
+                            .goodsName{
+                                width: 198px;
+                                height: 36px;
+                                font-size: 14px;
+                                line-height: 18px;
+                                overflow: hidden;
+                                -o-text-overflow: ellipsis;
+                                text-overflow: ellipsis;
+                                text-align: left;
+                                word-break: break-all;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                -webkit-line-clamp: 2;
+                                color: #333;
+                                .transitionFn();
+                            }
+                            .price{
+                                width: 100%;
+                                height: 29px;
+                                line-height: 29px;
+                                color: red;
+                                text-align: center;
+                                font-size: 14px;
+                                i{
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                        .find{
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 60px;
+                            line-height: 60px;
+                            z-index: 9;
+                            text-align: center;
+                            visibility: hidden;
+                            opacity: 0;
+                            .transitionFn();
+                            span{
+                                display: inline-block;
+                                width: 60px;
+                                height: 60px;
+                                line-height: 60px;
+                                text-align: center;
+                                border-radius: 50%;
+                                background: #5C5C5C;
+                                color: white;
+                                .transitionFn();
+                                &:hover{
+                                    background: #222;
+                                }
+                            }
+                        }
+                        &:hover .info{
+                            opacity: .4;
+                        }
+                        &:hover .info .goodsName{
+                            color: red;
+                        }
+                        &:hover .find{
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                    
+                }
+            }
+            .loading{
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+            }
+        }
+        
+    }
+}

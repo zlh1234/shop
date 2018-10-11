@@ -1,0 +1,239 @@
+
+@borderLine: #DEDEDE;
+@Height: 30px;
+@fontColor: #999;
+
+/*
+ * Mixin,下拉框
+ * @params {Width} widthValue 宽度(px)
+ * @params {Number} 0||1 0为left 1为right
+*/
+.dropdownMixin(@widthValue){
+  position: absolute;
+  top: @Height + 1px;
+  width: @widthValue;
+  padding: 10px 5px;
+  background: white;
+  border-left: 1px solid @borderLine;
+  border-right: 1px solid @borderLine;
+  border-bottom: 1px solid @borderLine;
+  display: none;
+  z-index: 999;
+}
+
+.header{
+  position: relative;
+  width: 100%;
+  background: #E3E4E5;
+  border-bottom: 1px solid #D4D4D4;
+  color: @fontColor;
+  font-size: 12px;
+  .headerBar{
+    position: relative;
+    margin: 0 auto;
+    width: 1190px;
+    height: @Height;
+    background: #E3E4E5;
+    /*左边菜单（地区选择）*/
+    .menuLeft{
+      position: relative;
+      float: left;
+      height: @Height;
+      z-index: 999;
+      &>li{
+        position: relative;
+        float: left;
+        height: @Height;
+        margin-left: 200px;
+        line-height: @Height;
+        .areaItem{/*文字*/
+          border-left: 1px solid transparent;
+          border-right: 1px solid transparent;
+          padding: 0 7px;
+        }
+        .dropdown{/*下拉框*/
+          .dropdownMixin(300px);
+          left: 0;
+          li{
+            float: left;
+            width: 20%;
+            height: 30px;
+            text-align: center;
+            a{
+              display: inline-block;
+              color: @fontColor;
+              height: 26px;
+              line-height: 26px;
+              width: 80%;
+              &:hover{
+                background: #F0F0F0;
+                color: #F10215;
+              }
+            }
+            &.act a{/*当前选中的添加样式*/
+              background: #f10215;
+              color: white;
+              &:hover{
+                background: #f10215;
+                color: white;
+              }
+            }
+          }
+        }
+        &.hover{
+          .areaItem{
+            height: 31px;
+            background: white;
+            border-left: 1px solid @borderLine;
+            border-right: 1px solid @borderLine;
+          }
+          .dropdown{
+            display: block;
+          }
+        }
+      }
+    }
+    /*右边菜单*/
+    .menuRight{
+      position: relative;
+      float: right;
+      height: @Height;
+      &>li{
+        position: relative;
+        float: left;
+        height: @Height;
+        line-height: @Height;
+        .areaItem{
+          border-left: 1px solid transparent;
+          border-right: 1px solid transparent;
+          padding: 0 7px;
+          a{
+            color: @fontColor;
+            &:hover{
+              color: #F10215;
+            }
+            &.regLink{
+              color: #F10215;
+              margin-left: 3px;
+            }
+          }
+        }
+        /*企业采购*/
+        .dropdown1{
+          .dropdownMixin(160px);
+          left: 0;
+          padding: 10px;
+          li{
+            float: left;
+            width: 50%;
+            line-height: 24px;
+            a{
+              color: @fontColor;
+              &:hover{
+                color: #F10215;
+              }
+            }
+          }
+        }
+        /*客户服务*/
+        .dropdown2{
+          .dropdownMixin(160px);
+          right: 0;
+          padding: 10px;
+          li{
+            .title{
+              color: #333;
+              font-weight: 600;
+              line-height: 24px;
+            }
+            .list{
+              span{
+                display: block;
+                width: 50%;
+                float: left;
+                line-height: 24px;
+                a{
+                  color: @fontColor;
+                  &:hover{
+                    color: #f10215;
+                  }
+                }
+              }
+            }
+          }
+        }
+        /*网站导航*/
+        .fullDropdown{
+          .dropdownMixin(1190px);
+          right: 0px;
+          padding: 10px 0;
+          li{
+            float: left;
+            width: 276px;
+            border-right: 1px solid @borderLine;
+            padding-left: 20px;
+            .title{
+              color: #333;
+              font-weight: 600;
+              line-height: 24px;
+            }
+            .list{
+              span{
+                display: block;
+                width: 33%;
+                float: left;
+                line-height: 24px;
+                a{
+                  color: @fontColor;
+                  &:hover{
+                    color: #f10215;
+                  }
+                }
+              }
+            }
+            &:first-child{
+              width: 360px;
+              .list{
+                span{
+                  width: 25%;
+                }
+              }
+            }
+            &:last-child{
+              border-right:none;
+              border-right: 0px solid @borderLine;
+            }
+          }
+        }
+        &.hover{
+          .areaItem{
+            height: 31px;
+            background: white;
+            border-left: 1px solid @borderLine;
+            border-right: 1px solid @borderLine;
+          }
+          .dropdown1{
+            display: block;
+          }
+          .dropdown2{
+            display: block;
+          }
+          .fullDropdown{
+            display: block;
+          }
+        }
+        &.line{
+          overflow: hidden;
+          margin: 11px 5px 0;
+          width: 1px;
+          height: 10px;
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * hover 显示下拉框
+*/
